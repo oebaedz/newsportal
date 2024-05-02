@@ -1,19 +1,27 @@
-const NewsCard = ({item}) => {
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/Components/ui/card";
+
+const NewsCard = ({ item }) => {
     return (
-        <div
-            className="w-80 h-56 border rounded-lg shadow-md p-5 flex flex-col justify-between"
-        >
-            <div>
-                <p className="text-xl truncate font-bold">{item.title}</p>
-                <p className="text-sm font-light">{item.category}</p>
-            </div>
-            <div>
-                <p className="italic line-clamp-2">{item.description}</p>
-            </div>
-            <div>
-                <p>Created by : {item.author}</p>
-            </div>
-        </div>
+        <Card className='w-72 shadow-md flex flex-col justify-between'>
+            <CardHeader>
+                <CardTitle className='truncate text-lg'>{item.title}</CardTitle>
+                <CardDescription>{item.category}</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <img src="https://i.ytimg.com/vi/nXKxU89QFvA/maxresdefault.jpg" alt="genshin" />
+                <p className="line-clamp-2 mt-2">{item.description}</p>
+            </CardContent>
+            <CardFooter>
+                <p>{item.author}</p>
+            </CardFooter>
+        </Card>
     );
 };
 

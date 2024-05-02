@@ -140,7 +140,7 @@ export default function Navbar({ auth }) {
                                             ) : (
                                                 <button
                                                     type="button"
-                                                    className="relative text-sm rounded-full border bg-gray-200 py-1 px-4 text-gray-800 hover:text-gray-200 hover:bg-gray-800"
+                                                    className="relative font-medium text-sm rounded-full border bg-gray-200 py-1 px-4 text-gray-800 hover:text-gray-200 hover:bg-gray-800"
                                                 >
                                                     <Link href='/login'>Login</Link>
                                                 </button>
@@ -226,9 +226,9 @@ export default function Navbar({ auth }) {
                                     </div>
                                     <div className="mt-3 space-y-1 px-2">
                                         {!auth
-                                            ? userNavigation.map((item) => (
+                                            ? userNavigation.map((item, i) => (
                                                   <Disclosure.Button
-                                                      key={item.name}
+                                                      key={i}
                                                       as="a"
                                                       href={item.href}
                                                       className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
