@@ -7,13 +7,14 @@ const Homepage = (props) => {
     return (
         <>
             <Head title={props.title} />
+
             <Navbar auth={props.auth.user}/>
-            <div className="min-h-screen max-w-7xl mx-auto flex justify-center gap-6 flex-wrap m-4 px-4 sm:px-6">
+            <div className="flex justify-center gap-6 flex-wrap mt-4 mb-20">
                 {props.news.data.map((item) => (
-                    <NewsCard key={item.id} item={item}/>
+                    <NewsCard key={item.id} item={item} />
                 ))}
             </div>
-            <Paginator meta={props.news.meta}/>
+            <Paginator meta={props.news.meta} />
         </>
     );
 };
