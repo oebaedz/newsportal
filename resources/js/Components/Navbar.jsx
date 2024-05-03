@@ -20,11 +20,11 @@ function classNames(...classes) {
 }
 
 export default function Navbar({ auth }) {
-  const userNavigation = [
-      { name: auth?.name, href: "/profile" },
-      { name: "Settings", href: "/profile" },
-      { name: "Sign out", href: "/logout" },
-  ];
+    const userNavigation = [
+        { name: auth?.name, href: "/profile" },
+        { name: "Settings", href: "/profile" },
+        { name: "Sign out", href: "/logout" },
+    ];
     return (
         <>
             <div className="min-h-full">
@@ -33,6 +33,7 @@ export default function Navbar({ auth }) {
                         <>
                             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                                 <div className="flex h-16 items-center justify-between">
+                                    {/* Logo & Nav */}
                                     <div className="flex items-center">
                                         <div className="flex-shrink-0">
                                             <img
@@ -71,7 +72,9 @@ export default function Navbar({ auth }) {
                                                 type="button"
                                                 className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white"
                                             >
-                                                <Link href="/profile">{auth?.name}</Link>
+                                                <Link href="/profile">
+                                                    {auth?.name}
+                                                </Link>
                                             </button>
 
                                             {/* Profile dropdown */}
@@ -138,12 +141,24 @@ export default function Navbar({ auth }) {
                                                     </Transition>
                                                 </Menu>
                                             ) : (
+                                                <>
                                                 <button
                                                     type="button"
-                                                    className="relative font-medium text-sm rounded-full border bg-gray-200 py-1 px-4 text-gray-800 hover:text-gray-200 hover:bg-gray-800"
+                                                    className="relative flex font-medium text-sm rounded-lg bg-gray-500 py-1 px-4 text-gray-300  hover:bg-gray-400 hover:text-gray-700"
                                                 >
-                                                    <Link href='/login'>Login</Link>
+                                                    <Link href="/register">
+                                                        Sign Up
+                                                    </Link>
                                                 </button>
+                                                <button
+                                                    type="button"
+                                                    className="relative flex font-medium text-sm rounded-lg bg-gray-400 py-1 px-4 text-gray-800  hover:bg-gray-100"
+                                                >
+                                                    <Link href="/login">
+                                                        Sign In
+                                                    </Link>
+                                                </button>
+                                                </>
                                             )}
                                         </div>
                                     </div>
