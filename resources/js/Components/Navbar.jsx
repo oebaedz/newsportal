@@ -144,7 +144,7 @@ export default function Navbar({ auth }) {
                                                 <>
                                                 <button
                                                     type="button"
-                                                    className="relative flex font-medium text-sm rounded-lg bg-gray-500 py-1 px-4 text-gray-300  hover:bg-gray-400 hover:text-gray-700"
+                                                    className="relative flex font-medium ring-1 ring-gray-800 text-sm rounded-lg py-1 px-4 text-gray-300 hover:ring-gray-200"
                                                 >
                                                     <Link href="/register">
                                                         Sign Up
@@ -152,7 +152,7 @@ export default function Navbar({ auth }) {
                                                 </button>
                                                 <button
                                                     type="button"
-                                                    className="relative flex font-medium text-sm rounded-lg bg-gray-400 py-1 px-4 text-gray-800  hover:bg-gray-100"
+                                                    className="relative flex font-medium ring-1 text-sm rounded-lg bg-gray-200 py-1 px-4 text-gray-800 hover:text-gray-200  hover:bg-gray-800 ring-gray-200"
                                                 >
                                                     <Link href="/login">
                                                         Sign In
