@@ -11,7 +11,7 @@ const user = {
 };
 const navigation = [
     { name: "CuyNews", href: "/", current: true },
-    { name: "Dashboard", href: "/welcome", current: false },
+    { name: "Dashboard", href: "/dashboard", current: false },
     { name: "Profile", href: "/profile", current: false },
 ];
 

@@ -61,7 +61,7 @@ class NewsController extends Controller
     public function edit(News $news, Request $request)
     {
         return Inertia::render('EditNews', [
-            'myNews' => $news->find($request->id),
+            'currentNews' => $news->find($request->id),
         ]);
     }
 
@@ -70,19 +70,20 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        News::where('id', $request->id())->update([
+        News::where('id', $request->id)->update([
             'title' => $request->title,
             'description' => $request->description,
             'category' => $request->category,
         ]);
-        return to_route('Dashboard')->with('message', 'Berita berhasil diubah.');
+        return to_route('dashboard')->with('message', 'Berita berhasil diubah.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(News $news)
+    public function destroy(Request $request, News $news)
     {
-        //
+        News::where('id', $request->id)->delete();
+        return redirect()->back()->with('message', "Berita berhasil dihapus");
     }
 }

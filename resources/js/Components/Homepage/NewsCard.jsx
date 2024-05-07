@@ -11,7 +11,7 @@ const NewsCard = ({ news }) => {
     return (
         <div className="min-h-full max-w-7xl mx-auto flex justify-center gap-6 flex-wrap mt-4 mb-20 m-4 px-4 sm:px-6">
             {news.map((item) => (
-                <Card className="w-72 shadow-md flex flex-col justify-between">
+                <Card key={item.id} className="w-72 shadow-md flex flex-col justify-between">
                     <CardHeader>
                         <img
                             src="https://i.ytimg.com/vi/nXKxU89QFvA/maxresdefault.jpg"

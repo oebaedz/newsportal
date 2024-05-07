@@ -1,7 +1,15 @@
-const EditNews = () => {
-  return (
-    <div>EditNews</div>
-  )
-}
+import EditContent from "@/Components/EditPage/EditContent";
+import Navbar from "@/Components/Navbar";
+import { Head } from "@inertiajs/react";
 
-export default EditNews
+const EditNews = (props) => {
+    return (
+        <>
+            <Head title="Edit Berita" />
+            <Navbar auth={props.auth.user} />
+            <EditContent news={props.currentNews}/>
+        </>
+    );
+};
+
+export default EditNews;
